@@ -4,118 +4,266 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Our Wedding</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Meryem & Max Wedding</title>
+
+```
+<link rel="stylesheet" href="style.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+```
+
 </head>
 <body>
 
-```
 <header class="hero">
-    <img src="images/mm-photo.jpg" alt="M&M" class="hero-image">
+    <img src="images/mm-photo.jpg" alt="Meryem and Max">
 
-    <div class="hero-text">
-        <h1>We're Getting Married!</h1>
-        <p class="date">October 10, 2026</p>
-    </div>
+```
+<div class="overlay">
+    <h1>Meryem & Max</h1>
+    <p>September 20, 2026</p>
+    <p>Eagle, Colorado</p>
+</div>
+```
+
 </header>
 
-<section class="venue">
-    <h2>Wedding Venue</h2>
+<section>
+    <h2>Welcome</h2>
 
-    <div class="address-box">
-        <p>909 Capitol St</p>
-        <p>Eagle, CO 81631</p>
-    </div>
+```
+<p class="center-text">
+    Together with their families,
+    Meryem & Max invite you to celebrate their marriage.
+</p>
+```
 
-    <a
-        href="https://maps.google.com/?q=909+Capitol+St+Eagle+CO+81631"
-        target="_blank"
-        class="button"
-    >
-        Open in Google Maps
-    </a>
 </section>
 
-<section class="rsvp">
+<section>
+    <h2>Countdown To The Big Day</h2>
+
+```
+<div class="countdown">
+    <div class="time-box">
+        <h3 id="days">0</h3>
+        <span>Days</span>
+    </div>
+
+    <div class="time-box">
+        <h3 id="hours">0</h3>
+        <span>Hours</span>
+    </div>
+
+    <div class="time-box">
+        <h3 id="minutes">0</h3>
+        <span>Minutes</span>
+    </div>
+</div>
+```
+
+</section>
+
+<section>
+    <h2>Wedding Details</h2>
+
+```
+<div class="card address-card">
+    <h3>Ceremony & Reception</h3>
+
+    <p>909 Capitol Street</p>
+    <p>Eagle, Colorado 81631</p>
+
+    <p><strong>Ceremony:</strong> 10:30 AM</p>
+    <p><strong>Lunch Reception:</strong> 12:30 PM</p>
+
+    <p>Sunday, September 20, 2026</p>
+</div>
+```
+
+</section>
+
+<section>
+    <h2>Wedding Day Schedule</h2>
+
+```
+<div class="card">
+
+    <table class="schedule-table">
+
+        <tr>
+            <td>10:00 AM</td>
+            <td>Guest Arrival</td>
+        </tr>
+
+        <tr>
+            <td>10:30 AM</td>
+            <td>Ceremony Begins</td>
+        </tr>
+
+        <tr>
+            <td>11:15 AM</td>
+            <td>Photos</td>
+        </tr>
+
+        <tr>
+            <td>12:30 PM</td>
+            <td>Lunch Reception</td>
+        </tr>
+
+        <tr>
+            <td>2:00 PM</td>
+            <td>Cake & Coffee</td>
+        </tr>
+
+        <tr>
+            <td>3:00 PM</td>
+            <td>Farewell</td>
+        </tr>
+
+    </table>
+
+</div>
+```
+
+</section>
+
+<section>
     <h2>RSVP</h2>
 
-    <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+```
+<form action="YOUR_FORM_ENDPOINT" method="POST">
 
-        <label for="name">Name</label>
-        <input type="text" id="name" name="name" required>
+    <input
+        type="text"
+        name="name"
+        placeholder="Full Name"
+        required>
 
-        <label>Will you attend?</label>
+    <select name="attendance" required>
+        <option value="">Will You Attend?</option>
+        <option>Yes</option>
+        <option>No</option>
+    </select>
 
-        <div class="radio-group">
-            <label>
-                <input type="radio" name="attendance" value="Yes" required>
-                Yes
-            </label>
+    <select name="meal" required>
+        <option value="">Select Your Meal</option>
+        <option>Salmon</option>
+        <option>Eggplant & Zucchini Lasagna</option>
+        <option>Fish Tacos</option>
+    </select>
 
-            <label>
-                <input type="radio" name="attendance" value="No">
-                No
-            </label>
-        </div>
+    <textarea
+        name="dietary"
+        placeholder="Dietary Restrictions"></textarea>
 
-        <label for="meal">Meal Preference</label>
-        <select id="meal" name="meal">
-            <option>Chicken</option>
-            <option>Beef</option>
-            <option>Vegetarian</option>
-            <option>Vegan</option>
-        </select>
+    <textarea
+        name="song"
+        placeholder="Song Request (Optional)"></textarea>
 
-        <label for="notes">Dietary Restrictions</label>
-        <textarea id="notes" name="notes"></textarea>
+    <button type="submit">Submit RSVP</button>
 
-        <button type="submit">Submit RSVP</button>
-    </form>
+</form>
+```
+
 </section>
 
-<section class="travel">
+<section>
+    <h2>Venue Map</h2>
+
+```
+<iframe
+src="https://maps.google.com/maps?q=909%20Capitol%20Street%20Eagle%20CO&t=&z=15&ie=UTF8&iwloc=&output=embed">
+</iframe>
+```
+
+</section>
+
+<section>
     <h2>Travel Information</h2>
 
-    <div class="info-card">
-        <h3>Nearest Airports</h3>
+```
+<div class="card">
 
-        <ul>
-            <li>
-                Eagle County Regional Airport (EGE)
-                <br>
-                ~10 minutes from Eagle
-            </li>
+    <h3>Nearest Airports</h3>
 
-            <li>
-                Denver International Airport (DEN)
-                <br>
-                ~2.5 hours from Eagle
-            </li>
-        </ul>
-    </div>
+    <ul>
+        <li>Eagle County Regional Airport (EGE) – approximately 10 minutes away</li>
+        <li>Denver International Airport (DEN) – approximately 2.5 hours away</li>
+    </ul>
+
+</div>
+```
+
 </section>
 
-<section class="hotel">
-    <h2>Hotel Block</h2>
+<section>
+    <h2>Hotel Accommodations</h2>
 
-    <div class="info-card">
-        <h3>Highlands Lodge</h3>
+```
+<div class="card">
 
-        <p>
-            We have reserved a room block for wedding guests.
-            Please mention our wedding when booking.
-        </p>
+    <h3>Highlands Lodge</h3>
 
-        <p>
-            Additional booking details will be added here.
-        </p>
-    </div>
+    <p>
+        A room block for wedding guests will be available.
+        Booking information will be posted soon.
+    </p>
+
+</div>
+```
+
+</section>
+
+<section>
+    <h2>Photo Gallery</h2>
+
+```
+<div class="gallery">
+
+    <img src="images/gallery1.jpg" alt="">
+    <img src="images/gallery2.jpg" alt="">
+    <img src="images/gallery3.jpg" alt="">
+    <img src="images/gallery4.jpg" alt="">
+
+</div>
+```
+
 </section>
 
 <footer>
-    <p>We can't wait to celebrate with you!</p>
+    <h3>We Can't Wait To Celebrate With You</h3>
+    <p>— Meryem & Max —</p>
 </footer>
-```
+
+<script>
+
+const weddingDate =
+new Date("September 20, 2026 10:30:00").getTime();
+
+setInterval(() => {
+
+    const now = new Date().getTime();
+    const distance = weddingDate - now;
+
+    document.getElementById("days").innerHTML =
+        Math.floor(distance / (1000 * 60 * 60 * 24));
+
+    document.getElementById("hours").innerHTML =
+        Math.floor(
+            (distance % (1000 * 60 * 60 * 24))
+            / (1000 * 60 * 60)
+        );
+
+    document.getElementById("minutes").innerHTML =
+        Math.floor(
+            (distance % (1000 * 60 * 60))
+            / (1000 * 60)
+        );
+
+}, 1000);
+
+</script>
 
 </body>
 </html>
