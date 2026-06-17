@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Wedding</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+```
+<header class="hero">
+    <img src="images/mm-photo.jpg" alt="M&M" class="hero-image">
+
+    <div class="hero-text">
+        <h1>We're Getting Married!</h1>
+        <p class="date">October 10, 2026</p>
+    </div>
+</header>
+
+<section class="venue">
+    <h2>Wedding Venue</h2>
+
+    <div class="address-box">
+        <p>909 Capitol St</p>
+        <p>Eagle, CO 81631</p>
+    </div>
+
+    <a
+        href="https://maps.google.com/?q=909+Capitol+St+Eagle+CO+81631"
+        target="_blank"
+        class="button"
+    >
+        Open in Google Maps
+    </a>
+</section>
+
+<section class="rsvp">
+    <h2>RSVP</h2>
+
+    <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" required>
+
+        <label>Will you attend?</label>
+
+        <div class="radio-group">
+            <label>
+                <input type="radio" name="attendance" value="Yes" required>
+                Yes
+            </label>
+
+            <label>
+                <input type="radio" name="attendance" value="No">
+                No
+            </label>
+        </div>
+
+        <label for="meal">Meal Preference</label>
+        <select id="meal" name="meal">
+            <option>Chicken</option>
+            <option>Beef</option>
+            <option>Vegetarian</option>
+            <option>Vegan</option>
+        </select>
+
+        <label for="notes">Dietary Restrictions</label>
+        <textarea id="notes" name="notes"></textarea>
+
+        <button type="submit">Submit RSVP</button>
+    </form>
+</section>
+
+<section class="travel">
+    <h2>Travel Information</h2>
+
+    <div class="info-card">
+        <h3>Nearest Airports</h3>
+
+        <ul>
+            <li>
+                Eagle County Regional Airport (EGE)
+                <br>
+                ~10 minutes from Eagle
+            </li>
+
+            <li>
+                Denver International Airport (DEN)
+                <br>
+                ~2.5 hours from Eagle
+            </li>
+        </ul>
+    </div>
+</section>
+
+<section class="hotel">
+    <h2>Hotel Block</h2>
+
+    <div class="info-card">
+        <h3>Highlands Lodge</h3>
+
+        <p>
+            We have reserved a room block for wedding guests.
+            Please mention our wedding when booking.
+        </p>
+
+        <p>
+            Additional booking details will be added here.
+        </p>
+    </div>
+</section>
+
+<footer>
+    <p>We can't wait to celebrate with you!</p>
+</footer>
+```
+
+</body>
+</html>
