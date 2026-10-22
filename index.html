@@ -16,13 +16,13 @@
     <style>
         .rsvp-form label {
             display: block;
-            margin-top: 18px;
+            margin-top: 16px;
             margin-bottom: 8px;
             font-weight: 600;
         }
 
         .rsvp-form fieldset {
-            margin: 20px 0;
+            margin: 18px 0;
             padding: 18px;
             border: 1px solid #c9c9c9;
             border-radius: 8px;
@@ -60,12 +60,48 @@
 
         .rsvp-note {
             text-align: center;
+            margin-bottom: 24px;
+        }
+
+        .optional-section {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid #ddd;
+        }
+
+        .optional-heading {
+            text-align: center;
+            margin-bottom: 8px;
+        }
+
+        .optional-description {
+            text-align: center;
+            font-size: 0.9rem;
+            opacity: 0.8;
             margin-bottom: 20px;
+        }
+
+        .form-hint {
+            font-size: 0.85rem;
+            opacity: 0.75;
+            margin: 6px 0 12px;
+        }
+
+        .plus-one-box {
+            margin-top: 15px;
+            padding: 18px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
         }
 
         .ski-links {
             text-align: center;
             margin-top: 18px;
+        }
+
+        .rsvp-form button {
+            margin-top: 24px;
+            cursor: pointer;
         }
     </style>
 </head>
@@ -138,7 +174,6 @@
               href="https://www.google.com/maps/search/?api=1&amp;query=25918+Genesee+Trail+Rd+%23140+Golden+CO+80401"
               target="_blank"
               rel="noopener noreferrer">
-
                 25918 Genesee Trail Rd #140<br>
                 Golden, CO 80401
             </a>
@@ -153,7 +188,7 @@
 </section>
 
 
-<!-- WEDDING SCHEDULE -->
+<!-- WEDDING DAY SCHEDULE -->
 
 <section>
     <h2>Wedding Day Schedule</h2>
@@ -164,27 +199,22 @@
                 <td>4:30 PM</td>
                 <td>Guest Arrival</td>
             </tr>
-
             <tr>
                 <td>5:00 PM</td>
                 <td>Ceremony</td>
             </tr>
-
             <tr>
                 <td>5:40 PM</td>
                 <td>Photos</td>
             </tr>
-
             <tr>
                 <td>6:10 PM</td>
                 <td>Dinner</td>
             </tr>
-
             <tr>
                 <td>8:00 PM</td>
                 <td>Cake</td>
             </tr>
-
             <tr>
                 <td>9:15 PM</td>
                 <td>Guest Departure</td>
@@ -223,7 +253,6 @@
               href="https://www.google.com/maps/search/?api=1&amp;query=19285+CO-103+Idaho+Springs+CO+80452"
               target="_blank"
               rel="noopener noreferrer">
-
                 19285 CO-103<br>
                 Idaho Springs, CO 80452
             </a>
@@ -251,14 +280,13 @@
 <!-- RSVP FORM -->
 
 <section id="rsvp">
+
     <h2>RSVP</h2>
 
     <p class="rsvp-note">
         We can't wait to celebrate with you!
         Please let us know if you'll be joining us.
     </p>
-
-    <!-- CONNECTED GOOGLE APPS SCRIPT FORM -->
 
     <form
         id="rsvp-form"
@@ -267,9 +295,12 @@
         method="POST"
         target="_blank">
 
-        <!-- GUEST NAME -->
+        <!-- REQUIRED INFORMATION -->
 
-        <label for="guest-name">Your Full Name</label>
+        <label for="guest-name">
+            Your Full Name *
+        </label>
+
         <input
             type="text"
             id="guest-name"
@@ -278,9 +309,10 @@
             required>
 
 
-        <!-- EMAIL -->
+        <label for="email">
+            Email Address *
+        </label>
 
-        <label for="email">Email Address</label>
         <input
             type="email"
             id="email"
@@ -289,10 +321,8 @@
             required>
 
 
-        <!-- ATTENDANCE -->
-
         <label for="attendance">
-            Will You Attend Our Wedding?
+            Will You Attend Our Wedding? *
         </label>
 
         <select
@@ -306,73 +336,20 @@
         </select>
 
 
-        <!-- ATTENDING GUEST OPTIONS -->
+        <!-- OPTIONAL INFORMATION -->
 
-        <div id="wedding-options" hidden>
+        <div id="optional-details"
+             class="optional-section"
+             hidden>
 
-            <!-- DIETARY REQUIREMENTS -->
+            <h3 class="optional-heading">
+                A Few More Details
+            </h3>
 
-            <fieldset id="dietary-group">
-
-                <legend>
-                    Your Dietary Restrictions or Preferences
-                </legend>
-
-                <p>Select all that apply.</p>
-
-                <label class="checkbox-option">
-                    <input type="checkbox"
-                           name="dietary"
-                           value="No Restrictions">
-                    No Restrictions
-                </label>
-
-                <label class="checkbox-option">
-                    <input type="checkbox"
-                           name="dietary"
-                           value="Vegan">
-                    Vegan
-                </label>
-
-                <label class="checkbox-option">
-                    <input type="checkbox"
-                           name="dietary"
-                           value="Vegetarian">
-                    Vegetarian
-                </label>
-
-                <label class="checkbox-option">
-                    <input type="checkbox"
-                           name="dietary"
-                           value="Pescatarian">
-                    Pescatarian
-                </label>
-
-                <label class="checkbox-option">
-                    <input type="checkbox"
-                           name="dietary"
-                           value="Halal">
-                    Halal
-                </label>
-
-                <label class="checkbox-option">
-                    <input type="checkbox"
-                           name="dietary"
-                           value="Other">
-                    Other
-                </label>
-
-                <label for="dietary-details">
-                    Other Restrictions or Allergies
-                </label>
-
-                <input
-                    type="text"
-                    id="dietary-details"
-                    name="dietary_details"
-                    placeholder="Please specify if applicable">
-
-            </fieldset>
+            <p class="optional-description">
+                The following questions are optional.
+                Feel free to skip any you aren't sure about!
+            </p>
 
 
             <!-- PLUS ONE -->
@@ -385,15 +362,21 @@
                 id="plus-one"
                 name="plus_one">
 
-                <option value="">Select an option</option>
+                <option value="">
+                    Not Sure / Prefer Not to Say
+                </option>
+
                 <option value="No">No</option>
                 <option value="Yes">Yes</option>
+
             </select>
 
 
             <!-- PLUS ONE DETAILS -->
 
-            <div id="plus-one-details" hidden>
+            <div id="plus-one-details"
+                 class="plus-one-box"
+                 hidden>
 
                 <label for="plus-one-name">
                     Plus One's Full Name
@@ -405,16 +388,22 @@
                     name="plus_one_name"
                     placeholder="First and Last Name">
 
+                <p class="form-hint">
+                    You can leave this blank for now.
+                </p>
 
-                <!-- PLUS ONE DIETARY RESTRICTIONS -->
+
+                <!-- PLUS ONE DIETARY -->
 
                 <fieldset id="plus-one-dietary-group">
 
                     <legend>
-                        Plus One's Dietary Restrictions
+                        Plus One's Dietary Preferences
                     </legend>
 
-                    <p>Select all that apply.</p>
+                    <p class="form-hint">
+                        Optional — select any that apply.
+                    </p>
 
                     <label class="checkbox-option">
                         <input type="checkbox"
@@ -471,8 +460,6 @@
                 </fieldset>
 
 
-                <!-- PLUS ONE SKI DAY -->
-
                 <label for="plus-one-ski-day">
                     Will Your Plus One Join the Ski Day?
                 </label>
@@ -481,44 +468,121 @@
                     id="plus-one-ski-day"
                     name="plus_one_ski_day">
 
-                    <option value="">Select an option</option>
+                    <option value="">
+                        Not Sure Yet
+                    </option>
                     <option value="Yes">Yes</option>
                     <option value="No">No</option>
                     <option value="Maybe">Maybe</option>
                 </select>
 
             </div>
+
+
+            <!-- GUEST DIETARY -->
+
+            <fieldset id="dietary-group">
+
+                <legend>
+                    Your Dietary Preferences
+                </legend>
+
+                <p class="form-hint">
+                    Optional — select any that apply,
+                    or leave blank.
+                </p>
+
+                <label class="checkbox-option">
+                    <input type="checkbox"
+                           name="dietary"
+                           value="No Restrictions">
+                    No Restrictions
+                </label>
+
+                <label class="checkbox-option">
+                    <input type="checkbox"
+                           name="dietary"
+                           value="Vegan">
+                    Vegan
+                </label>
+
+                <label class="checkbox-option">
+                    <input type="checkbox"
+                           name="dietary"
+                           value="Vegetarian">
+                    Vegetarian
+                </label>
+
+                <label class="checkbox-option">
+                    <input type="checkbox"
+                           name="dietary"
+                           value="Pescatarian">
+                    Pescatarian
+                </label>
+
+                <label class="checkbox-option">
+                    <input type="checkbox"
+                           name="dietary"
+                           value="Halal">
+                    Halal
+                </label>
+
+                <label class="checkbox-option">
+                    <input type="checkbox"
+                           name="dietary"
+                           value="Other">
+                    Other
+                </label>
+
+                <label for="dietary-details">
+                    Other Restrictions or Allergies
+                </label>
+
+                <input
+                    type="text"
+                    id="dietary-details"
+                    name="dietary_details"
+                    placeholder="Please specify if applicable">
+
+            </fieldset>
+
+
+            <!-- SKI DAY -->
+
+            <label for="ski-day">
+                Will You Join Us for Skiing on March 21?
+            </label>
+
+            <select
+                id="ski-day"
+                name="ski_day">
+
+                <option value="">
+                    Not Sure Yet
+                </option>
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+                <option value="Maybe">Maybe</option>
+
+            </select>
+
+
+            <!-- SONG REQUEST -->
+
+            <label for="song">
+                Song Request (Optional)
+            </label>
+
+            <textarea
+                id="song"
+                name="song"
+                placeholder="What song will get you dancing?">
+            </textarea>
+
         </div>
 
 
-        <!-- SKI DAY -->
-
-        <label for="ski-day">
-            Will You Join Us for Skiing on March 21?
-        </label>
-
-        <select id="ski-day"
-                name="ski_day"
-                required>
-
-            <option value="">Select an option</option>
-            <option value="Yes">Yes</option>
-            <option value="No">No</option>
-            <option value="Maybe">Maybe</option>
-        </select>
-
-
-        <!-- SONG REQUEST -->
-
-        <label for="song">Song Request (Optional)</label>
-
-        <textarea
-            id="song"
-            name="song"
-            placeholder="What song will get you dancing?"></textarea>
-
-
-        <!-- SUBMIT BUTTON -->
+        <!-- SUBMIT -->
 
         <button type="submit">
             Submit RSVP
@@ -530,6 +594,7 @@
         </p>
 
     </form>
+
 </section>
 
 
@@ -566,7 +631,7 @@
         </p>
 
         <p>
-            For guests joining the Sunday ski day,
+            For guests joining our Sunday ski day,
             Echo Mountain is located near
             Idaho Springs, Colorado.
         </p>
@@ -590,8 +655,8 @@
         <h3>Accommodations</h3>
 
         <p>
-            Accommodation recommendations and
-            booking information will be posted soon.
+            Accommodation recommendations and booking
+            information will be posted soon.
         </p>
 
     </div>
@@ -604,7 +669,6 @@
     <h2>Photo Gallery</h2>
 
     <div class="gallery">
-
         <img src="Media (4).jpg"
              alt="Meryem and Max photo 1">
 
@@ -616,7 +680,6 @@
 
         <img src="Media (3).jpg"
              alt="Meryem and Max photo 4">
-
     </div>
 </section>
 
@@ -631,8 +694,7 @@
 
 <script>
 
-// COUNTDOWN
-// March 20, 2027 at 5 PM Mountain Daylight Time
+// WEDDING COUNTDOWN
 
 const weddingDate =
     new Date("2027-03-20T17:00:00-06:00").getTime();
@@ -665,37 +727,36 @@ setInterval(updateCountdown, 1000);
 
 // RSVP FORM LOGIC
 
-const form = document.getElementById("rsvp-form");
+const form =
+    document.getElementById("rsvp-form");
 
-const attendance = document.getElementById("attendance");
-const weddingOptions =
-    document.getElementById("wedding-options");
+const attendance =
+    document.getElementById("attendance");
 
-const plusOne = document.getElementById("plus-one");
+const optionalDetails =
+    document.getElementById("optional-details");
+
+const plusOne =
+    document.getElementById("plus-one");
+
 const plusOneDetails =
     document.getElementById("plus-one-details");
 
-const plusOneName =
-    document.getElementById("plus-one-name");
 
-const plusOneSkiDay =
-    document.getElementById("plus-one-ski-day");
-
-
-// SHOW OR HIDE CONDITIONAL FIELDS
+// DISPLAY OPTIONAL FIELDS
 
 function updateRSVP() {
+
     const attending = attendance.value === "Yes";
 
-    weddingOptions.hidden = !attending;
+    optionalDetails.hidden = !attending;
 
-    weddingOptions.querySelectorAll(
+    // Prevent hidden fields from submitting.
+    optionalDetails.querySelectorAll(
         "input, select, textarea"
     ).forEach(field => {
         field.disabled = !attending;
     });
-
-    plusOne.required = attending;
 
     const bringingPlusOne =
         attending && plusOne.value === "Yes";
@@ -708,92 +769,70 @@ function updateRSVP() {
         field.disabled = !bringingPlusOne;
     });
 
-    plusOneName.required = bringingPlusOne;
-    plusOneSkiDay.required = bringingPlusOne;
 }
 
-attendance.addEventListener("change", updateRSVP);
-plusOne.addEventListener("change", updateRSVP);
+attendance.addEventListener(
+    "change",
+    updateRSVP
+);
+
+plusOne.addEventListener(
+    "change",
+    updateRSVP
+);
 
 
-// KEEP "NO RESTRICTIONS" EXCLUSIVE
+// DIETARY CHECKBOX BEHAVIOR
 
 function setupDietaryGroup(groupId) {
-    const group = document.getElementById(groupId);
+
+    const group =
+        document.getElementById(groupId);
 
     const boxes = Array.from(
-        group.querySelectorAll('input[type="checkbox"]')
+        group.querySelectorAll(
+            'input[type="checkbox"]'
+        )
     );
 
     boxes.forEach(box => {
+
         box.addEventListener("change", () => {
+
             if (!box.checked) return;
 
             if (box.value === "No Restrictions") {
+
                 boxes.forEach(other => {
                     if (other !== box) {
                         other.checked = false;
                     }
                 });
+
             } else {
+
                 const none = boxes.find(
-                    item => item.value === "No Restrictions"
+                    item =>
+                        item.value === "No Restrictions"
                 );
 
                 if (none) {
                     none.checked = false;
                 }
+
             }
+
         });
+
     });
+
 }
 
 setupDietaryGroup("dietary-group");
 setupDietaryGroup("plus-one-dietary-group");
 
 
-// VALIDATE DIETARY CHOICES BEFORE SUBMISSION
-// CORRECTED: NO LONGER BLOCKS GOOGLE SCRIPT URL
-
-form.addEventListener("submit", event => {
-
-    const attending = attendance.value === "Yes";
-
-    if (!attending) return;
-
-    const hasDietarySelection = groupId =>
-        Array.from(
-            document.querySelectorAll(
-                "#" + groupId + ' input[type="checkbox"]'
-            )
-        ).some(box => box.checked);
-
-    if (!hasDietarySelection("dietary-group")) {
-        event.preventDefault();
-
-        alert(
-            "Please select your dietary preferences."
-        );
-
-        return;
-    }
-
-    if (
-        plusOne.value === "Yes" &&
-        !hasDietarySelection("plus-one-dietary-group")
-    ) {
-        event.preventDefault();
-
-        alert(
-            "Please select your plus one's dietary preferences."
-        );
-
-        return;
-    }
-});
-
-
-// INITIALIZE RSVP FORM
+// INITIALIZE FORM
 
 updateRSVP();
 
