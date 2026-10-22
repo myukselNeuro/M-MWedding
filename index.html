@@ -141,16 +141,13 @@
 
                 25918 Genesee Trail Rd #140<br>
                 Golden, CO 80401
-
             </a>
         </p>
 
         <p><strong>Saturday, March 20, 2027</strong></p>
 
         <p><strong>Guest Arrival:</strong> 4:30 PM</p>
-
         <p><strong>Ceremony:</strong> 5:00 PM</p>
-
         <p><strong>Dinner:</strong> 6:10 PM</p>
     </div>
 </section>
@@ -162,7 +159,6 @@
     <h2>Wedding Day Schedule</h2>
 
     <div class="card">
-
         <table class="schedule-table">
             <tr>
                 <td>4:30 PM</td>
@@ -194,7 +190,6 @@
                 <td>Guest Departure</td>
             </tr>
         </table>
-
     </div>
 </section>
 
@@ -231,7 +226,6 @@
 
                 19285 CO-103<br>
                 Idaho Springs, CO 80452
-
             </a>
         </p>
 
@@ -264,7 +258,7 @@
         Please let us know if you'll be joining us.
     </p>
 
-    <!-- IMPORTANT: INSERT YOUR GOOGLE SCRIPT URL BELOW -->
+    <!-- CONNECTED GOOGLE APPS SCRIPT FORM -->
 
     <form
         id="rsvp-form"
@@ -283,6 +277,7 @@
             placeholder="First and Last Name"
             required>
 
+
         <!-- EMAIL -->
 
         <label for="email">Email Address</label>
@@ -292,6 +287,7 @@
             name="email"
             placeholder="Your Email Address"
             required>
+
 
         <!-- ATTENDANCE -->
 
@@ -474,6 +470,9 @@
 
                 </fieldset>
 
+
+                <!-- PLUS ONE SKI DAY -->
+
                 <label for="plus-one-ski-day">
                     Will Your Plus One Join the Ski Day?
                 </label>
@@ -486,7 +485,6 @@
                     <option value="Yes">Yes</option>
                     <option value="No">No</option>
                     <option value="Maybe">Maybe</option>
-
                 </select>
 
             </div>
@@ -507,7 +505,6 @@
             <option value="Yes">Yes</option>
             <option value="No">No</option>
             <option value="Maybe">Maybe</option>
-
         </select>
 
 
@@ -518,8 +515,10 @@
         <textarea
             id="song"
             name="song"
-            placeholder="What song will get you dancing?">
-        </textarea>
+            placeholder="What song will get you dancing?"></textarea>
+
+
+        <!-- SUBMIT BUTTON -->
 
         <button type="submit">
             Submit RSVP
@@ -632,7 +631,7 @@
 
 <script>
 
-// WEDDING COUNTDOWN
+// COUNTDOWN
 // March 20, 2027 at 5 PM Mountain Daylight Time
 
 const weddingDate =
@@ -683,13 +682,13 @@ const plusOneSkiDay =
     document.getElementById("plus-one-ski-day");
 
 
-// Show or hide conditional form fields.
+// SHOW OR HIDE CONDITIONAL FIELDS
 
 function updateRSVP() {
     const attending = attendance.value === "Yes";
+
     weddingOptions.hidden = !attending;
 
-    // Disable hidden fields so they aren't submitted.
     weddingOptions.querySelectorAll(
         "input, select, textarea"
     ).forEach(field => {
@@ -717,10 +716,11 @@ attendance.addEventListener("change", updateRSVP);
 plusOne.addEventListener("change", updateRSVP);
 
 
-// Keep "No Restrictions" exclusive.
+// KEEP "NO RESTRICTIONS" EXCLUSIVE
 
 function setupDietaryGroup(groupId) {
     const group = document.getElementById(groupId);
+
     const boxes = Array.from(
         group.querySelectorAll('input[type="checkbox"]')
     );
@@ -731,14 +731,18 @@ function setupDietaryGroup(groupId) {
 
             if (box.value === "No Restrictions") {
                 boxes.forEach(other => {
-                    if (other !== box) other.checked = false;
+                    if (other !== box) {
+                        other.checked = false;
+                    }
                 });
             } else {
                 const none = boxes.find(
                     item => item.value === "No Restrictions"
                 );
 
-                if (none) none.checked = false;
+                if (none) {
+                    none.checked = false;
+                }
             }
         });
     });
@@ -748,14 +752,10 @@ setupDietaryGroup("dietary-group");
 setupDietaryGroup("plus-one-dietary-group");
 
 
-// Validate dietary checkboxes before submitting.
+// VALIDATE DIETARY CHOICES BEFORE SUBMISSION
+// CORRECTED: NO LONGER BLOCKS GOOGLE SCRIPT URL
 
 form.addEventListener("submit", event => {
-    if (form.action.includes("https://script.google.com/macros/s/AKfycbztL88HDMYtq2a2UO7WiaxKD8SafknXj2scXkjfvMh9_nJ6tLd6O4yRyXwSxvTpVCkLZw/exec")) {
-        event.preventDefault();
-        alert("The RSVP form has not been connected yet.");
-        return;
-    }
 
     const attending = attendance.value === "Yes";
 
@@ -770,18 +770,30 @@ form.addEventListener("submit", event => {
 
     if (!hasDietarySelection("dietary-group")) {
         event.preventDefault();
-        alert("Please select your dietary preferences.");
+
+        alert(
+            "Please select your dietary preferences."
+        );
+
         return;
     }
 
-    if (plusOne.value === "Yes" &&
-        !hasDietarySelection("plus-one-dietary-group")) {
-
+    if (
+        plusOne.value === "Yes" &&
+        !hasDietarySelection("plus-one-dietary-group")
+    ) {
         event.preventDefault();
-        alert("Please select your plus one's dietary preferences.");
+
+        alert(
+            "Please select your plus one's dietary preferences."
+        );
+
         return;
     }
 });
+
+
+// INITIALIZE RSVP FORM
 
 updateRSVP();
 
